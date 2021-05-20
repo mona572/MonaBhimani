@@ -33,7 +33,6 @@ public class EmailTemperature extends TimerTask {
 			final String password="Password";  
 			    
 			String to="To Email id";  
-			//Get the session object  
 			Properties props = new Properties();  
 			props.put("mail.smtp.auth", "true");  
 			props.put("mail.smtp.starttls.enable", "true");
@@ -55,7 +54,6 @@ public class EmailTemperature extends TimerTask {
 					message.setText("City: "
 				    		+obj1.getJSONObject("location").getString("name")+"\nCurrent Temperature: "+obj1.getJSONObject("current").getString("temperature"));  
 						
-					//send the message  
 					Transport.send(message);  
 						
 					System.out.println("message sent successfully...");  
